@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+#代表表名		@代表列名		~强制词性
+你好		->
+	#act->@hello
+	(
+		$a,
+		$b
+	);
+早上好	->
+	#connective->@and
+	(
+		#act->@hello
+		(
+			$a,
+			$b
+		),
+		#act->@think
+		(
+			$a,
+			#act->@is
+			(
+				#noun->@nowtime,
+				#noun->@morning
+			)
+		);
+	)
+我很丑，但是我很温柔
+	#connective->@but
+	(
+		#act->@think		//or	#act->@is...
+		(
+			$a;
+			#act->@is
+			(
+				$a;
+				#noun->@ugly(~adj,80)
+			)
+		),
+		#act->@think		//or	#act->@is...
+		(
+			$a;
+			#act->@is
+			(
+				$a;
+				#noun->@gentle(~adj,80)
+			)
+		)
+	)
+</body>
+</html>

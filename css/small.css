@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+.frame
+{
+	font-size:12px;
+	margin-top:76px;
+}
+.frame_p
+{
+	background-color:#ddddff;
+	width:300px;
+	border-width:1px;
+	border-color:#c0c0c0;
+	border-style:solid;
+	margin:auto;
+	padding:50px;
+}
+.msg_p
+{
+	background-color:#ddddff;
+	width:750px;
+	border-width:1px;
+	border-color:#c0c0c0;
+	border-style:solid;
+	margin:auto;
+}
+.msg_top
+{
+	font-size:18px;
+	text-align:center;
+	margin:35px;
+}
+.msg_bottom
+{
+	margin:35px;
+}
+.p_s
+{
+	margin:20px;
+}

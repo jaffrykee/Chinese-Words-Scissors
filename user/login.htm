@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录 ::: 陶可米的小黑屋</title>
+<link href="../css/small.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../lib/jquery.js"></script>
+<script type="text/javascript" src="../lib/md5.js"></script>
+<script type="text/javascript">
+	function login()
+	{
+		var user_name=document.getElementById("oun").value;
+		var md5_key=hex_md5(document.getElementById("ok1").value);
+		window.location.href='../user/login.php?oun='+user_name+'&ok='+md5_key;
+	}
+</script>
+<script type="text/javascript">
+	$(document).ready
+	(
+		function()
+		{
+			$("#ok1").keyup
+			(
+				function(event)
+				{
+					var keycode=event.which;
+					if(keycode==null)
+					{
+						keycode=event.keycode;
+					}
+					if(keycode==13)
+					{
+						login();
+					}
+				}
+			);
+		}
+//		$("#hst_record").scrollTop($("#hst_record").prop("scrollHeight"));
+	);
+</script>
+</head>
+
+<body>
+	<div class="frame">
+		<div class="frame_p" id="lp">
+			<div class="p_s">
+				账号：<input name="oun" id="oun" type="text" size="20" maxlength="20" />
+			</div>
+			<div class="p_s">
+				密码：<input name="ok1" id="ok1" type="password" size="20" maxlength="16" />
+			</div>
+			<div class="p_s" id="p3">
+				<a href="#a" onclick="login()">登录</a> <a href="../user/reg.htm">注册</a>
+			</div>
+		</div>
+		<a href="http://SiteStates.com" title="站長工具">
+    		<img src="http://SiteStates.com/show/image/26356.jpg" border="0" />
+		</a>
+	</div>
+</body>
+</html>

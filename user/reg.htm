@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>注册 ::: 陶可米的小黑屋</title>
+<link href="../css/small.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../lib/jquery.js"></script>
+<script type="text/javascript" src="../lib/md5.js"></script>
+<script type="text/javascript" src="../lib/str.js"></script>
+<script type="text/javascript">
+	function reg()
+	{
+		var user_name=document.getElementById("oun").value;
+		if(isChinese(user_name))
+		{
+			echoMsg("注册失败，用户名不能包含中文字符");
+		}
+		else
+		{
+			if(user_name.length<=3)
+			{
+				echoMsg("注册失败，用户名长度不能小于4");
+			}
+			else
+			{
+				var k1=document.getElementById("ok1").value;
+				var k2=document.getElementById("ok2").value;
+				if(k1!=k2)
+				{
+					echoMsg("注册失败，两次的密码不相同");
+				}
+				else
+				{
+					if(k1.length<=5)
+					{
+						echoMsg("注册失败，密码长度不能小于6");
+					}
+					else
+					{
+						var rn=document.getElementById("real_name").value;
+						if(rn.length==0)
+						{
+							echoMsg("注册失败，昵称不能为空");
+						}
+						else
+						{
+							var em=document.getElementById("email").value;
+							if(!isEmail(em))
+							{
+								echoMsg("注册失败，电子邮件非法");
+							}
+							else
+							{
+								var md5_key=hex_md5(k1);
+								window.location.href='../user/reg.php?oun='+user_name+'&ok='+md5_key+'&rn='+rn+'&em='+em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+</script>
+</head>
+
+<body>
+	<div class="frame">
+		<div class="frame_p" id="rp">
+			<div class="p_s">
+				用户名：&nbsp;&nbsp;<input name="oun" id="oun" type="text" size="20" maxlength="15" />
+			</div>
+			<div class="p_s">
+				密码：&nbsp;&nbsp;&nbsp;&nbsp;<input name="ok1" id="ok1" type="password" size="20" maxlength="16" />
+			</div>
+			<div class="p_s">
+				重复密码：<input name="ok2" id="ok2" type="password" size="20" maxlength="16" />
+			</div>
+			<div class="p_s">
+				昵称：&nbsp;&nbsp;&nbsp;&nbsp;<input name="real_name" id="real_name" type="text" size="20" maxlength="15" />
+			</div>
+			<div class="p_s">
+				电子邮件：<input name="email" id="email" type="text" size="20" maxlength="32" />
+			</div>
+			<div class="p_s" id="p3">
+				<a href="#a" onclick="reg()">提交</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

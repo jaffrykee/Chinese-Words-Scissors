@@ -1,0 +1,29 @@
+<?php
+	include_once("../lib/init.php");
+	if($_GET['oun']!=NULL&&$_GET['ok']!=NULL)
+	{
+		$sql="SELECT * FROM user WHERE name='".$_GET['oun']."'";
+		$res=mysql_query($sql);
+		if($row=mysql_fetch_array($res))
+		{
+			if($row['pass_word']==$_GET['ok'])
+			{
+				$_SESSION['uid']=$row['id'];
+				$_SESSION['user']=$row['name'];
+				$_SESSION['real_name']=$row['real_name'];
+				$_SESSION['class']=$row['class'];
+				echo "<script type='text/javascript'>window.location.href='../talk';</script>";
+			}
+			else
+			{
+				echo_Msg('密码错误(err:ul_003)');
+			}
+		}
+		else
+			echo_Msg('用户名不存在(err:ul_002)');
+	}
+	else
+	{
+		echo_Msg('登录失败(err:ul_001)');
+	}
+?>

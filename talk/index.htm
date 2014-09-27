@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../lib/jquery.js"></script>
+<title>陶可米的小黑屋</title>
+<link href="../css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	$(document).ready
+	(
+		function()
+		{
+			$("#now_record").keyup
+			(
+				function(event)
+				{
+					var keycode=event.which;
+					if(keycode==null)
+					{
+						keycode=event.keycode;
+					}
+					if(keycode==13)
+					{
+						if($("#now_record").attr("readonly")!=true);
+						{
+							$("#now_record").attr("readonly",true);
+							htmlobj=$.ajax
+							(
+								{
+									type: 'POST',
+									url: "../talk/deal.php",
+									async: false,
+									data: 
+									{
+										nr: $("#now_record").attr("value")
+									},
+									success: function(data)
+									{
+										$("#hst_record").append(data);
+									}
+								}
+							);
+							$("#now_record").attr("readonly",false);
+						}
+					}
+					$("#hst_record").scrollTop($("#hst_record").prop("scrollHeight"));
+				}
+			);
+			$("#clr_record").click
+			(
+				function()
+				{
+					$("#hst_record").empty();
+				}
+			);
+		}
+//		$("#hst_record").scrollTop($("#hst_record").prop("scrollHeight"));
+	);
+
+</script>
+</head>
+
+<body>
+	<div class="main">
+		<div class="left">
+			<div class="top">
+				<div class="heal">欢迎光临,推荐使用火狐浏览器</div>
+				<div class="hear"><a href="#clr_record" id="clr_record">清空记录</a> <a href="../user/logout.php" href="#logout" id="logout">注销</a></div>
+			</div>
+			<div id="hst_record">
+				<div class="hst_one" id="ho0">陶可米：你好，我叫陶可米！</div>
+			</div>
+				<input name="now_record" id="now_record" type="text" size="100"/>
+			<div id="sql_list">
+			</div>
+		</div>
+		<div class="right">
+			<div class="right_tip">
+				<p>预设命令：</p>
+				<p>-list_one [list_name]	显示表名为[list_name]的数据</p>
+				<p>-list_all		显示所有表名</p>
+				<p>-com_all			显示所有指令</p>
+				<p>&nbsp;</p>
+				<p>指令举例：</p>
+				<p>-sql_list mls_command		查看所有指令的另一种写法</p>
+				<p>&nbsp;</p>
+				<p><a href="../notice">公告</a></p>
+			</div>
+			<div class="right_tip">
+				<p>版本：0.0.1.1&nbsp;</p>
+				<p>邮箱：daomaodao@sina.com</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+@charset "utf-8";
+/* CSS Document */
+table
+{
+	width:95%;
+}
+
+table,tr,td
+{
+	font-Size:12px;
+	border-collapse:collapse;
+	border-width:1px;
+	border-color:#c0c0c0;
+	border-style:solid;
+	padding:5px;
+	margin:5px;
+}
+.def
+{
+	font-Size:12px;
+}
+.main
+{
+/*	border-width:1px;
+	border-color:#c0c0c0;
+	border-style:solid;*/
+	width:800px;
+	overflow:auto;
+	height:100%;
+	font-Size:12px;
+	margin-left:auto; 
+	margin-right:auto;
+	margin-top:50px;
+	padding:10px;
+	background-color:#ccccff;
+}
+.left
+{
+	width:543px;
+	float:left;
+	padding:5px;
+	margin:5px;
+}
+.right
+{
+	width:178px;
+	float:right;
+	padding:5px;
+	margin:5px;
+}
+.top
+{
+	height:16px;
+	width:100%;
+	border-width:1px;
+	border-color:#c0c0c0;
+	border-style:solid;
+	background-color:#eeeeff;
+	padding:5px;
+}
+.heal
+{
+	float:left;
+/*	border-width:1px;
+	border-color:#c0c0c0;
+	border-style:solid;*/
+}
+.hear
+{
+	float:right;
+	text-align:right;
+/*	border-width:1px;
+	border-color:#c0c0c0;
+	border-style:solid;*/
+}
+#hst_record
+{
+	height:400px;
+	width:100%;
+	border-width:1px;
+	border-color:#c0c0c0;
+	border-style:solid;
+	overflow-y:scroll;
+	margin-top:5px;
+	margin-bottom:5px;
+	background-color:#ffffff;
+}
+.hst_one{
+	padding:5px;
+	font-size:14px;
+}
+#now_record
+{
+	width:100%;
+}
+.right_tip
+{
+	width:100%;
+	border-width:1px;
+	border-color:#c0c0c0;
+	border-style:solid;
+	background-color:#eeeeff;
+	padding:5px;
+	margin-bottom:10px
+}

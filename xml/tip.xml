@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tip id="1">
+	<k>词汇</k>
+	<k>检索</k>
+	<k>规则</k>
+	<k>优先级</k>
+	<con>
+		优先检索word_connective表(连接词表)，其次是word_verb表(动词表)，最后是word_noun表(名词表)
+	</con>
+</tip>
