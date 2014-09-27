@@ -2,7 +2,7 @@
 	include_once("lib/init.php");
 	if($_SESSION['user']!=NULL)
 	{
-		echo "<script type='text/javascript'>window.location.href='talk';</script>";
+		echo "<script type='text/javascript'>window.location.href='talk/index.htm';</script>";
 	}
 	else
 	{

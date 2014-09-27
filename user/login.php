@@ -12,7 +12,7 @@
 				$_SESSION['user']=$row['name'];
 				$_SESSION['real_name']=$row['real_name'];
 				$_SESSION['class']=$row['class'];
-				echo "<script type='text/javascript'>window.location.href='../talk';</script>";
+				echo "<script type='text/javascript'>window.location.href='../talk/index.htm';</script>";
 			}
 			else
 			{
